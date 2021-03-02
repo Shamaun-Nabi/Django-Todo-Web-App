@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="text-primary" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static css/style.css}">
+</head>
+
+<body style="margin: 0px;box-shadow: inset 0px 0px 0px var(--dark), 0px 0px;height: 500;">
+    <!-- Head section -->
+    <div class="container-fluid text-white bg-info border rounded shadow">
+        <div class="row text-left text-primary">
+            <div class="col">
+                <h1 class="text-center text-light">My TODO LIST</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="width: 900px;height: 20px;margin-left:100px; margin-top: 45px; margin-bottom: 45px;background: var(--light);box-shadow: 0px 0px rgb(18,20,21);">
+        <div class="row">
+            <div class="col">
+                <form action="" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="add your todo" aria-label="Recipient's username with two button addons" style="height:45px;">
+                        <button class="btn btn-outline-success" type="button">ADD</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ALL DATA -->
+    {% for todo in data %}
+    <div class=" container" style="width: 900px;height: 20px;margin-top: 45px; margin-bottom: 45px;background: var(--light);box-shadow: 0px 0px rgb(18,20,21);">
+        <div class="row">
+            <div class="col">
+                <div style="width: 171px;">
+                    <h3>{{todo.id}}</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <h2>{{todo.text}}</h2>
+                    <p>{{todo.userDate}}</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow-sm"><button class="btn btn-success shadow" type="button" style="margin-right: 10px;">Edit</button>
+                    <button class="btn btn-info shadow" type="button">Delete</button></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
